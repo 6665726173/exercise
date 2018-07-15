@@ -23,9 +23,19 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "./node_modules/font-awesome/css/font-awesome.min.css",
+              "src/styles.css",
+              "./node_modules/jquery-ui/themes/base/all.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/formiojs/dist/formio.full.min.css",
+              "./node_modules/pickr-widget/dist/pickr.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "./node_modules/formiojs/dist/formio.full.min.js",
+              "./node_modules/pickr-widget/dist/pickr.min.js"
+            ]
           },
           "configurations": {
             "production": {
