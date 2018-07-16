@@ -1,10 +1,32 @@
 import TextFieldComponent from 'formiojs/components/textfield/Textfield';
+import Picker from 'vanilla-picker';
 
 export default class ColorPickerComponent extends TextFieldComponent {
   static schema(...extend) {
     return TextFieldComponent.schema({
+      type: 'color',
+      key:'color',
       inputType: 'text',
-      label: 'Color Picker'
+      defaultValue: '000000',
+      label: 'Color Picker',
+      validate: {
+        custom: {
+          "if": [
+            {
+              "!==": [
+                {
+                  "var": "input"
+                },
+                "AB2567"
+              ]
+            },
+            true,
+            "Choose any color other than [AB2567]"
+          ]
+        }
+      },
+      values: [{ label: '', value: '' }],
+      fieldSet: false
     }, ...extend);
   }
 
@@ -27,7 +49,7 @@ export default class ColorPickerComponent extends TextFieldComponent {
 
   elementInfo() {
     const info = super.elementInfo();
-    info.attr.value = "ab2567";
+    info.attr.class += ' color';
     return info;
   }
 }
