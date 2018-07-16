@@ -11,15 +11,4 @@ export class TodosEffects {
   constructor(
     private actions$: Actions<Action>,
   ) {}
-
-  /*@Effect({ dispatch: false })
-  persistTodos(): Observable<Action> {
-    return this.actions$
-      .ofType(fromReducer.FormActionTypes.
-      .pipe(
-        tap((action: ActionTodosPersist) =>
-          this.localStorageService.setItem(TODOS_KEY, action.payload.todos)
-        )
-      );
-  }*/
 }

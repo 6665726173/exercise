@@ -16,8 +16,6 @@ const initialState: FormState = {
   error: ''
 };
 
-
-
 export function reducer(state = initialState, action: FormActions): FormState {
   switch (action.type) {
     case FormActionTypes.UpdateScehma:
@@ -34,11 +32,6 @@ export function reducer(state = initialState, action: FormActions): FormState {
         ...state,
         submissions: [],
         formSchema: newElt
-      };
-      case FormActionTypes.LoadSchema:
-      return {
-        ...state,
-        error: action.payload
       };
     case FormActionTypes.CreateSubmission:
     state.submissions.push(action.payload);
